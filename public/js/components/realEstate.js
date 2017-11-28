@@ -408,48 +408,61 @@ var Header = function (_Component) {
               _react2.default.createElement(
                 "span",
                 { className: "address" },
-                "Address"
+                "23 Dexi Hills"
               ),
               _react2.default.createElement(
                 "div",
                 { className: "details" },
-                _react2.default.createElement("div", { className: "user-img" }),
                 _react2.default.createElement(
                   "div",
-                  { className: "user-details" },
-                  _react2.default.createElement(
-                    "span",
-                    { className: "user-name" },
-                    "Nina Smith"
-                  ),
-                  _react2.default.createElement(
-                    "span",
-                    { className: "post-date" },
-                    "05/05/2017"
-                  )
+                  { className: "col-md-3" },
+                  _react2.default.createElement("div", { className: "user-img" })
                 ),
                 _react2.default.createElement(
                   "div",
-                  { className: "listing-details" },
+                  { className: "col-md-9" },
                   _react2.default.createElement(
                     "div",
-                    { className: "floor-space" },
-                    _react2.default.createElement("i", { className: "fa fa-square-o", "aria-hidden": "true" }),
+                    { className: "user-details" },
                     _react2.default.createElement(
                       "span",
-                      null,
-                      "1000 ft\xB2"
+                      { className: "user-name" },
+                      "Nina Smith"
+                    ),
+                    _react2.default.createElement(
+                      "span",
+                      { className: "post-date" },
+                      "05/05/2017"
                     )
                   ),
                   _react2.default.createElement(
                     "div",
-                    { className: "bedrooms" },
-                    _react2.default.createElement("i", { className: "fa fa-bed", "aria-hidden": "true" }),
+                    { className: "listing-details" },
                     _react2.default.createElement(
-                      "span",
-                      null,
-                      "3 bedrooms"
+                      "div",
+                      { className: "floor-space" },
+                      _react2.default.createElement("i", { className: "fa fa-square-o", "aria-hidden": "true" }),
+                      _react2.default.createElement(
+                        "span",
+                        null,
+                        "1000 ft\xB2"
+                      )
+                    ),
+                    _react2.default.createElement(
+                      "div",
+                      { className: "bedrooms" },
+                      _react2.default.createElement("i", { className: "fa fa-bed", "aria-hidden": "true" }),
+                      _react2.default.createElement(
+                        "span",
+                        null,
+                        "3 bedrooms"
+                      )
                     )
+                  ),
+                  _react2.default.createElement(
+                    "div",
+                    { className: "view-btn" },
+                    "View Listing"
                   )
                 )
               )
