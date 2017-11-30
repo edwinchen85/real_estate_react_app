@@ -167,9 +167,9 @@ export default class Header extends Component {
           </div>
         </section>
 
-        <section className="pagination">
-          <ul className="pagination-nums">
-            <li>Prev</li>
+        <section id="pagination">
+          <ul className="pages">
+            <li className="active">Prev</li>
             <li>1</li>
             <li>2</li>
             <li>3</li>
