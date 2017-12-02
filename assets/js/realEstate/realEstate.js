@@ -18,7 +18,7 @@ class App extends Component {
         <Header />
         <section className="content-area">
           <Filter />
-          <Listings />
+          <Listings listingsData={this.state.listingsData}/>
         </section>
       </div>);
   }

@@ -88,7 +88,7 @@ var listingsData = [
   },
   {
     address: '05-31 Summer Ave',
-    city: 'Commonwealth',
+    city: 'NashVille',
     state: 'CM',
     rooms: 4,
     price: 870000,

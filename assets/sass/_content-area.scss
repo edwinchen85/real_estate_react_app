@@ -139,10 +139,13 @@
       }
 
       .address {
+        font-size: 1.2rem;
+        text-transform: capitalize;
         position: absolute;
         bottom: 20px;
         opacity: 1;
         transition: all .4s ease-in-out;
+        text-shadow: 0 1px 4px rgba(91, 91, 91, 1);
       }
 
       .details {
@@ -165,8 +168,6 @@
           border-radius: 50%;
           border: 2px solid white;
           display: inline-block;
-          background: url('http://images2.fanpop.com/image/photos/10100000/Anna-Kendrick-anna-kendrick-10124230-683-984.jpg') no-repeat center top;
-          background-size: cover;
         }
 
         .user-details {
