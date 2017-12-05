@@ -52,6 +52,9 @@ var App = function (_Component) {
 
     _this.state = {
       listingsData: _listingsData2.default,
+      city: 'All',
+      homeType: 'All',
+      bedrooms: 0,
       min_price: 0,
       max_price: 10000000,
       min_floor_space: 0,
@@ -86,8 +89,20 @@ var App = function (_Component) {
       var _this3 = this;
 
       var newData = this.state.listingsData.filter(function (item) {
-        return item.price >= _this3.state.min_price && item.price <= _this3.state.max_price && item.floorSpace >= _this3.state.min_floor_space && item.floorSpace <= _this3.state.max_floor_space;
+        return item.price >= _this3.state.min_price && item.price <= _this3.state.max_price && item.floorSpace >= _this3.state.min_floor_space && item.floorSpace <= _this3.state.max_floor_space && item.rooms >= _this3.state.bedrooms;
       });
+
+      if (this.state.city != "All") {
+        newData = newData.filter(function (item) {
+          return item.city == _this3.state.city;
+        });
+      }
+
+      if (this.state.homeType != "All") {
+        newData = newData.filter(function (item) {
+          return item.homeType == _this3.state.homeType;
+        });
+      }
 
       this.setState({
         filteredData: newData
@@ -171,8 +186,18 @@ var Filter = function (_Component) {
             "Filter"
           ),
           _react2.default.createElement(
+            "label",
+            { htmlFor: "city" },
+            "City"
+          ),
+          _react2.default.createElement(
             "select",
-            { name: "neighbourhood", className: "filters neighbourhood", onChange: this.props.change },
+            { name: "city", className: "filters city", onChange: this.props.change },
+            _react2.default.createElement(
+              "option",
+              { value: "All" },
+              "All"
+            ),
             _react2.default.createElement(
               "option",
               { value: "Ridgewood" },
@@ -185,8 +210,18 @@ var Filter = function (_Component) {
             )
           ),
           _react2.default.createElement(
+            "label",
+            { htmlFor: "homeType" },
+            "Home Type"
+          ),
+          _react2.default.createElement(
             "select",
-            { name: "housetype", className: "filters housetype", onChange: this.props.change },
+            { name: "homeType", className: "filters homeType", onChange: this.props.change },
+            _react2.default.createElement(
+              "option",
+              { value: "All" },
+              "All Homes"
+            ),
             _react2.default.createElement(
               "option",
               { value: "Ranch" },
@@ -209,27 +244,37 @@ var Filter = function (_Component) {
             )
           ),
           _react2.default.createElement(
+            "label",
+            { htmlFor: "bedrooms" },
+            "Bedrooms"
+          ),
+          _react2.default.createElement(
             "select",
             { name: "bedrooms", className: "filters bedrooms", onChange: this.props.change },
             _react2.default.createElement(
               "option",
+              { value: "0" },
+              "0+ BR"
+            ),
+            _react2.default.createElement(
+              "option",
               { value: "1" },
-              "1 BR"
+              "1+ BR"
             ),
             _react2.default.createElement(
               "option",
               { value: "2" },
-              "2 BR"
+              "2+ BR"
             ),
             _react2.default.createElement(
               "option",
               { value: "3" },
-              "3 BR"
+              "3+ BR"
             ),
             _react2.default.createElement(
               "option",
               { value: "4" },
-              "4 BR"
+              "4+ BR"
             )
           ),
           _react2.default.createElement(
@@ -659,9 +704,9 @@ Object.defineProperty(exports, "__esModule", {
 });
 var listingsData = [{
   address: '20-34 Holland Ave',
-  city: 'RidgeWood',
+  city: 'Ridgewood',
   state: 'NY',
-  rooms: 3,
+  rooms: 1,
   price: 220000,
   floorSpace: 2000,
   extras: ['convenience shop', 'gym'],
@@ -675,7 +720,7 @@ var listingsData = [{
   price: 246660,
   floorSpace: 1430,
   extras: ['7-11', 'gym'],
-  homeType: 'Apartment',
+  homeType: 'Studio',
   image: 'https://lh3.googleusercontent.com/mKlO8zuV3ZzJiEY8tiyIXtYuXTHzFAWssEx2C5XwNOG3WR_BSfFGHVjVY08waFvGbknidJkXdYiyg-Dv2lPBjPtUpg'
 }, {
   address: '30-14 Kent Ridge',
@@ -685,13 +730,13 @@ var listingsData = [{
   price: 345120,
   floorSpace: 1890,
   extras: ['elevator', 'gym'],
-  homeType: 'Serviced Apartment',
+  homeType: 'Room',
   image: 'https://t-ec.bstatic.com/images/hotel/max1024x768/753/75380477.jpg'
 }, {
   address: '12-80 Woodlands Ave',
   city: 'Washington',
   state: 'DC',
-  rooms: 4,
+  rooms: 2,
   price: 470000,
   floorSpace: 2500,
   extras: ['elevator', 'gym'],
@@ -705,27 +750,27 @@ var listingsData = [{
   price: 610000,
   floorSpace: 4000,
   extras: ['elevator', 'gym', 'pool'],
-  homeType: 'Condominium',
+  homeType: 'Studio',
   image: 'https://images3.roofandfloor.com/listing_b5ddc806946ac52ee82ef3ab09708297/1024x600/vijay-rajas-century-court-in-poonamallee-os.jpg'
 }, {
   address: '01-75 Alma Ave',
   city: 'Boston',
   state: 'BT',
-  rooms: 4,
+  rooms: 2,
   price: 550000,
   floorSpace: 3900,
   extras: ['elevator', 'gym', 'pool', 'child care'],
-  homeType: 'Condominium',
+  homeType: 'Room',
   image: 'https://is1-2.housingcdn.com/4f2250e8/196a2b39d4d597ab3127d9e3e879f2e3/v5/_m/shree_chaaya_apartment_sanpada-mumbai-shree_developers.jpg'
 }, {
   address: '05-31 Summer Ave',
-  city: 'NashVille',
+  city: 'Miami',
   state: 'CM',
-  rooms: 4,
+  rooms: 5,
   price: 870000,
   floorSpace: 5200,
   extras: ['elevator', 'gym', 'pool', 'beach'],
-  homeType: 'Resort',
+  homeType: 'Ranch',
   image: 'https://www.reminetwork.com/wp-content/uploads/rsz_apartment.jpg'
 }];
 

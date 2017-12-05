@@ -1,9 +1,9 @@
 var listingsData = [
   {
     address: '20-34 Holland Ave',
-    city: 'RidgeWood',
+    city: 'Ridgewood',
     state: 'NY',
-    rooms: 3,
+    rooms: 1,
     price: 220000,
     floorSpace: 2000,
     extras: [
@@ -24,7 +24,7 @@ var listingsData = [
       '7-11',
       'gym'
     ],
-    homeType: 'Apartment',
+    homeType: 'Studio',
     image: 'https://lh3.googleusercontent.com/mKlO8zuV3ZzJiEY8tiyIXtYuXTHzFAWssEx2C5XwNOG3WR_BSfFGHVjVY08waFvGbknidJkXdYiyg-Dv2lPBjPtUpg'
   },
   {
@@ -38,14 +38,14 @@ var listingsData = [
       'elevator',
       'gym'
     ],
-    homeType: 'Serviced Apartment',
+    homeType: 'Room',
     image: 'https://t-ec.bstatic.com/images/hotel/max1024x768/753/75380477.jpg'
   },
   {
     address: '12-80 Woodlands Ave',
     city: 'Washington',
     state: 'DC',
-    rooms: 4,
+    rooms: 2,
     price: 470000,
     floorSpace: 2500,
     extras: [
@@ -67,14 +67,14 @@ var listingsData = [
       'gym',
       'pool'
     ],
-    homeType: 'Condominium',
+    homeType: 'Studio',
     image: 'https://images3.roofandfloor.com/listing_b5ddc806946ac52ee82ef3ab09708297/1024x600/vijay-rajas-century-court-in-poonamallee-os.jpg'
   },
   {
     address: '01-75 Alma Ave',
     city: 'Boston',
     state: 'BT',
-    rooms: 4,
+    rooms: 2,
     price: 550000,
     floorSpace: 3900,
     extras: [
@@ -83,14 +83,14 @@ var listingsData = [
       'pool',
       'child care'
     ],
-    homeType: 'Condominium',
+    homeType: 'Room',
     image: 'https://is1-2.housingcdn.com/4f2250e8/196a2b39d4d597ab3127d9e3e879f2e3/v5/_m/shree_chaaya_apartment_sanpada-mumbai-shree_developers.jpg'
   },
   {
     address: '05-31 Summer Ave',
-    city: 'NashVille',
+    city: 'Miami',
     state: 'CM',
-    rooms: 4,
+    rooms: 5,
     price: 870000,
     floorSpace: 5200,
     extras: [
@@ -99,7 +99,7 @@ var listingsData = [
       'pool',
       'beach'
     ],
-    homeType: 'Resort',
+    homeType: 'Ranch',
     image: 'https://www.reminetwork.com/wp-content/uploads/rsz_apartment.jpg'
   },
 ]
