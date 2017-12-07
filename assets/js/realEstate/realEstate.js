@@ -22,7 +22,8 @@ class App extends Component {
       finished_basement: false,
       gym: false,
       filteredData: listingsData,
-      populateFormsData: ''
+      populateFormsData: '',
+      sortby: 'price-dsc'
     };
 
     this.change = this.change.bind(this);
@@ -69,9 +70,21 @@ class App extends Component {
       })
     }
 
+    if (this.state.sortby == 'price-dsc') {
+      newData = newData.sort((a, b) => {
+        return a.price - b.price;
+      });
+    }
+
+    if (this.state.sortby == 'price-asc') {
+      newData = newData.sort((a, b) => {
+        return b.price - a.price;
+      });
+    }
+
     this.setState({
       filteredData: newData
-    }) ;
+    });
   }
 
   populateForms() {
@@ -121,7 +134,7 @@ class App extends Component {
         <Header />
         <section className="content-area">
           <Filter change={this.change} globalState={this.state} populateAction={this.populateForms} />
-          <Listings listingsData={this.state.filteredData}/>
+          <Listings listingsData={this.state.filteredData} change={this.change} />
         </section>
       </div>);
   }

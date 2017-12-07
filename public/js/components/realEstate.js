@@ -66,7 +66,8 @@ var App = function (_Component) {
       finished_basement: false,
       gym: false,
       filteredData: _listingsData2.default,
-      populateFormsData: ''
+      populateFormsData: '',
+      sortby: 'price-dsc'
     };
 
     _this.change = _this.change.bind(_this);
@@ -116,6 +117,18 @@ var App = function (_Component) {
       if (this.state.homeType != "All") {
         newData = newData.filter(function (item) {
           return item.homeType == _this3.state.homeType;
+        });
+      }
+
+      if (this.state.sortby == 'price-dsc') {
+        newData = newData.sort(function (a, b) {
+          return a.price - b.price;
+        });
+      }
+
+      if (this.state.sortby == 'price-asc') {
+        newData = newData.sort(function (a, b) {
+          return b.price - a.price;
         });
       }
 
@@ -177,7 +190,7 @@ var App = function (_Component) {
           'section',
           { className: 'content-area' },
           _react2.default.createElement(_Filter2.default, { change: this.change, globalState: this.state, populateAction: this.populateForms }),
-          _react2.default.createElement(_Listings2.default, { listingsData: this.state.filteredData })
+          _react2.default.createElement(_Listings2.default, { listingsData: this.state.filteredData, change: this.change })
         )
       );
     }
@@ -677,16 +690,16 @@ var Header = function (_Component) {
             { className: "sort-options" },
             _react2.default.createElement(
               "select",
-              { name: "sortby", className: "sortby" },
-              _react2.default.createElement(
-                "option",
-                { value: "price-asc" },
-                "Highest Price"
-              ),
+              { name: "sortby", className: "sortby", onChange: this.props.change },
               _react2.default.createElement(
                 "option",
                 { value: "price-dsc" },
                 "Lowest Price"
+              ),
+              _react2.default.createElement(
+                "option",
+                { value: "price-asc" },
+                "Highest Price"
               )
             ),
             _react2.default.createElement(
