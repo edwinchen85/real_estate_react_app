@@ -30,6 +30,16 @@ class App extends Component {
     this.populateForms = this.populateForms.bind(this);
   }
 
+  componentWillMount() {
+    var listingsData = this.state.listingsData.sort((a, b) => {
+      return a.price - b.price;
+    });
+
+    this.setState({
+      listingsData
+    })
+  }
+
   change(event) {
     var name = event.target.name;
     var value = event.target.type === 'checkbox' ? event.target.checked : event.target.value;
