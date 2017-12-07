@@ -73,6 +73,8 @@ class App extends Component {
     cities = new Set(cities);
     cities = [...cities];
 
+    cities = cities.sort();
+
     // homeType
     var homeTypes = this.state.listingsData.map((item) => {
       return item.homeType
@@ -81,6 +83,8 @@ class App extends Component {
     homeTypes = new Set(homeTypes);
     homeTypes = [...homeTypes];
 
+    homeTypes = homeTypes.sort();
+
     // bedrooms
     var bedrooms = this.state.listingsData.map((item) => {
       return item.rooms
@@ -88,6 +92,8 @@ class App extends Component {
 
     bedrooms = new Set(bedrooms);
     bedrooms = [...bedrooms];
+
+    bedrooms = bedrooms.sort();
 
     this.setState({
       populateFormsData: {
