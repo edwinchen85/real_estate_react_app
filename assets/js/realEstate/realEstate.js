@@ -23,12 +23,14 @@ class App extends Component {
       gym: false,
       filteredData: listingsData,
       populateFormsData: '',
-      sortby: 'price-dsc'
+      sortby: 'price-dsc',
+      view: 'box'
     };
 
     this.change = this.change.bind(this);
     this.filteredData = this.filteredData.bind(this);
     this.populateForms = this.populateForms.bind(this);
+    this.changeView = this.changeView.bind(this);
   }
 
   componentWillMount() {
@@ -51,6 +53,12 @@ class App extends Component {
         this.filteredData()
       }
     );
+  }
+
+  changeView(viewName) {
+    this.setState({
+      view: viewName
+    })
   }
 
   filteredData() {
@@ -134,7 +142,7 @@ class App extends Component {
         <Header />
         <section className="content-area">
           <Filter change={this.change} globalState={this.state} populateAction={this.populateForms} />
-          <Listings listingsData={this.state.filteredData} change={this.change} />
+          <Listings listingsData={this.state.filteredData} globalState={this.state} change={this.change} changeView={this.changeView} />
         </section>
       </div>);
   }
